@@ -43,7 +43,7 @@
     (esockd:transport(), esockd:socket(), emqx_channel:opts()) ->
         {ok, pid()};
     (
-        emqx_quic_stream,
+        demo_quic_stream,
         {ConnOwner :: pid(), quicer:connection_handle(), quicer:new_conn_props()},
         emqx_quic_connection:cb_state()
     ) ->

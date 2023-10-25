@@ -4,13 +4,16 @@
        {ref,"f6c710e834bb50dfddf4df573bbb6a89f9a37e04"}},
   0},
  {<<"ranch">>,{pkg,<<"ranch">>,<<"2.1.0">>},0},
+ {<<"recon">>,{pkg,<<"recon">>,<<"2.5.4">>},0},
  {<<"snabbkaffe">>,
   {git,"https://github.com/kafka4beam/snabbkaffe.git",
        {ref,"69058948359a3cffba1d5fe4575d136e3fbb3b11"}},
   1}]}.
 [
 {pkg_hash,[
- {<<"ranch">>, <<"2261F9ED9574DCFCC444106B9F6DA155E6E540B2F82BA3D42B339B93673B72A3">>}]},
+ {<<"ranch">>, <<"2261F9ED9574DCFCC444106B9F6DA155E6E540B2F82BA3D42B339B93673B72A3">>},
+ {<<"recon">>, <<"05DD52A119EE4059FA9DAA1AB7CE81BC7A8161A2F12E9D42E9D551FFD2BA901C">>}]},
 {pkg_hash_ext,[
- {<<"ranch">>, <<"244EE3FA2A6175270D8E1FC59024FD9DBC76294A321057DE8F803B1479E76916">>}]}
+ {<<"ranch">>, <<"244EE3FA2A6175270D8E1FC59024FD9DBC76294A321057DE8F803B1479E76916">>},
+ {<<"recon">>, <<"E9AB01AC7FC8572E41EB59385EFEB3FB0FF5BF02103816535BACAEDF327D0263">>}]}
 ].

@@ -78,7 +78,7 @@ new_conn(
     %% Start control stream process
     StartOption = S,
     {ok, CtrlPid} = demo_connection:start_link(
-        emqx_quic_stream,
+        demo_quic_stream,
         {self(), Conn, maps:without([crypto_buffer], ConnInfo)},
         StartOption
     ),
@@ -128,7 +128,6 @@ new_stream(
     SOpts1 = SOpts#{
         is_local => false,
         zone => Zone,
-        % unused
         limiter => Limiter,
         parse_state => PS,
         channel => Channel,
@@ -240,7 +239,7 @@ handle_info({'EXIT', Pid, Reason}, #{streams := Streams} = S) ->
     end.
 
 -spec init_cb_state(map()) -> cb_state().
-init_cb_state(#{zone := _Zone} = Map) ->
+init_cb_state(#{} = Map) ->
     Map#{
         conn_pid => self(),
         ctrl_pid => undefined,
