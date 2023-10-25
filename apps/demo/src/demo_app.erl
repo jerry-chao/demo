@@ -10,6 +10,7 @@
 -export([start/2, stop/1]).
 
 start(_StartType, _StartArgs) ->
+    logger:set_primary_config(level, debug),
     start_quic(),
     demo_sup:start_link().
 
@@ -20,15 +21,15 @@ start_quic() ->
         {conn_acceptors, 10},
         {peer_bidi_stream_count, 1}],
     ConnectionOpts = #{
-        conn_callback => demo_quic_connection,
+        conn_callback => demo_server_connection,
         peer_unidi_stream_count => 1,
         peer_bidi_stream_count => 10,
         listener => {quic, demo},
         limiter => 10
     },
     StreamOpts = #{
-        stream_callback => demo_quic_stream,
-        active => 1
+        stream_callback => demo_server_stream,
+        active => 20
     },
     quicer:spawn_listener(demo, 5556, {ListenOpts, ConnectionOpts, StreamOpts}).
 
