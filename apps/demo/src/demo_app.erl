@@ -29,7 +29,7 @@ start_quic() ->
     },
     StreamOpts = #{
         stream_callback => demo_server_stream,
-        active => 20
+        active => 1
     },
     quicer:spawn_listener(demo, 5556, {ListenOpts, ConnectionOpts, StreamOpts}).
 

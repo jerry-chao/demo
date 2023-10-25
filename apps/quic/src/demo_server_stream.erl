@@ -119,6 +119,7 @@ handle_stream_data(Stream, Bin, _Flags, #{is_unidir := false} = State) ->
         <<"ping">> ->
             {ok, _} = quicer:send(Stream, <<"pong">>)
     end,
+    ok = quicer:setopt(Stream, active, 1),
     {ok, State};
 handle_stream_data(Stream, Bin, _Flags, #{is_unidir := true, peer_stream := PeerStream, conn := Conn} = State) ->
     ?LOG_DEBUG(#{stream => Stream, data => Bin, module => ?MODULE, dir => unidir}),
